@@ -5,11 +5,15 @@
 
 # Step 1:
 # Create dockerpath
-# dockerpath=<your docker ID/path>
+dockerpath=emsibt/udacity_microservice:v1
 
 # Step 2:  
 # Authenticate & tag
+export DOCKER_ID="baott"
 echo "Docker ID and Image: $dockerpath"
+docker tag emsibt/udacity_microservice:v1 $DOCKER_ID/udacity_microservice:v1
 
 # Step 3:
 # Push image to a docker repository
+docker login docker.io
+docker push $DOCKER_ID/udacity_microservice:v1
